@@ -1,27 +1,27 @@
-<div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 3rem 1rem; margin: -1rem -1rem 2rem -1rem; border-radius: 0 0 15px 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+<div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 1.5rem 1rem; margin: -1rem -1rem 1.5rem -1rem; border-radius: 0 0 10px 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+  <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center;">
       <img 
         src=".github/images/sentivox-logo.png" 
         alt="Sentivox Logo" 
         style="
-          max-width: 100%; 
+          max-width: 90%; 
           height: auto; 
-          max-height: 150px; 
-          margin-bottom: 1.5rem;
+          max-height: 100px; 
+          margin-bottom: 1rem;
           object-fit: contain;
         "/>
       <div style="padding: 0 1rem;">
         <h1 style="
-          font-size: 2.5rem; 
-          margin: 0 0 0.5rem 0;
+          font-size: 2rem; 
+          margin: 0 0 0.3rem 0;
           color: #2c3e50;
           font-weight: 700;
           text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         ">Sentivox</h1>
         <p style="
-          font-size: 1.4rem; 
-          margin: 0 0 1rem 0;
+          font-size: 1.1rem; 
+          margin: 0 0 0.5rem 0;
           color: #34495e;
           font-weight: 500;
         ">
@@ -29,11 +29,11 @@
         </p>
         <p style="
           font-style: italic; 
-          font-size: 1.2rem; 
+          font-size: 1rem; 
           color: #7f8c8d;
-          max-width: 700px;
+          max-width: 600px;
           margin: 0 auto;
-          line-height: 1.5;
+          line-height: 1.4;
         ">
           "Empowering seniors through meaningful AI companionship"
         </p>
