@@ -1,5 +1,5 @@
 <div align="center" style="margin-bottom: 2rem;">
-  <img src=".github/images/sentivox-logo.png" alt="Sentivox Logo" style="max-width: 100%; height: auto; max-height: 300px; display: block; margin: 0 auto 1.5rem;"/>
+  <img src=".github/images/sentivox-logo.png" alt="Sentivox Logo" style="max-width: 80%; height: auto; max-height: 200px; display: block; margin: 0 auto 1.5rem;"/>
   
   <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Sentivox</h1>
   <p style="font-size: 1.25rem; margin-bottom: 1rem;"><strong>AI Companion for Senior Well-being</strong></p>
