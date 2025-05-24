@@ -6,7 +6,7 @@
           src=".github/images/sentivox-logo.png" 
           alt="Sentivox Logo" 
           style="
-            width: 120px;
+            width: 150px;
             height: auto;
             display: block;
             margin: 0 auto;
