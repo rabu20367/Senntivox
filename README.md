@@ -3,13 +3,13 @@
     <div style="display: flex; flex-direction: column; align-items: center;">
       <div style="padding: 20px 0 30px 0; width: 100%;">
         <div style="margin: 0 auto; width: 400px; max-width: 100%;">
-          <table align="center" style="margin: 0 auto;">
-            <tr>
-              <td style="text-align: center;">
+          <table align="center" style="margin: 0; border: 0; padding: 0; border-collapse: collapse;">
+            <tr style="border: 0; padding: 0;">
+              <td style="border: 0; padding: 0; text-align: center;">
                 <img 
                   src=".github/images/sentivox-logo.png" 
                   alt="Sentivox Logo" 
-                  style="width: 100%; height: auto; display: block;"
+                  style="width: 100%; height: auto; display: block; border: 0;"
                 />
               </td>
             </tr>
