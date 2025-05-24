@@ -5,7 +5,7 @@
         <img 
           src=".github/images/logo.png" 
           alt="Sentivox Logo" 
-          style="width: 400px; max-width: 100%; height: auto;"
+          style="width: 500px; max-width: 100%; height: auto;"
         />
         </div>
       </div>
