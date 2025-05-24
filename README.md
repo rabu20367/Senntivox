@@ -1,20 +1,12 @@
 <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 1.5rem 1rem; margin: -1rem -1rem 1.5rem -1rem; border-radius: 0 0 10px 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
   <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <div style="padding: 20px 0 30px 0; width: 100%;">
-        <div style="margin: 0 auto; width: 400px; max-width: 100%;">
-          <table align="center" style="margin: 0; border: 0; padding: 0; border-collapse: collapse;">
-            <tr style="border: 0; padding: 0;">
-              <td style="border: 0; padding: 0; text-align: center;">
-                <img 
-                  src=".github/images/logo.png" 
-                  alt="Sentivox Logo" 
-                  style="width: 100%; height: auto; display: block; border: 0;"
-                  onerror="this.onerror=null; this.src='.github/images/sentivox-logo.png'"
-                />
-              </td>
-            </tr>
-          </table>
+      <div style="text-align: center; padding: 20px 0 30px 0;">
+        <img 
+          src=".github/images/logo.png" 
+          alt="Sentivox Logo" 
+          style="width: 400px; max-width: 100%; height: auto;"
+        />
         </div>
       </div>
       <div style="padding: 0 1rem;">
