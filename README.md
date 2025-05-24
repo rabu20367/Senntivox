@@ -1,4 +1,9 @@
-# Sentivox - AI Companion for Senior Well-being
+<div align="center">
+  <img src="frontend/public/logo512.png" alt="Sentivox Logo" width="200"/>
+  
+  # Sentivox - AI Companion for Senior Well-being
+</div>
+
 
 Sentivox is an AI-powered companion designed to combat senior loneliness through engaging conversations, memory stimulation, and daily support.
 
