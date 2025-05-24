@@ -1,5 +1,5 @@
 <div align="center">
-  <img src=".github/images/sentivox-logo.png" alt="Sentivox Logo" width="200"/>
+  <img src=".github/images/sentivox-logo.jpg" alt="Sentivox Logo" width="200"/>
   
   <h1>Sentivox</h1>
   <p><strong>AI Companion for Senior Well-being</strong></p>
