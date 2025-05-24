@@ -7,7 +7,7 @@
             <tr style="border: 0; padding: 0;">
               <td style="border: 0; padding: 0; text-align: center;">
                 <img 
-                  src="backend/Logo file/Sentivox removed background logo.png" 
+                  src=".github/images/logo.png" 
                   alt="Sentivox Logo" 
                   style="width: 100%; height: auto; display: block; border: 0;"
                   onerror="this.onerror=null; this.src='.github/images/sentivox-logo.png'"
