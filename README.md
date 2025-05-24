@@ -5,10 +5,10 @@
         src=".github/images/sentivox-logo.png" 
         alt="Sentivox Logo" 
         style="
-          max-width: 90%; 
+          max-width: 50%; 
           height: auto; 
-          max-height: 100px; 
-          margin-bottom: 1rem;
+          max-height: 80px; 
+          margin: 0.5rem 0;
           object-fit: contain;
         "/>
       <div style="padding: 0 1rem;">
