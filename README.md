@@ -1,15 +1,15 @@
 <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 1.5rem 1rem; margin: -1rem -1rem 1.5rem -1rem; border-radius: 0 0 10px 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
   <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <div style="text-align: center; margin: 5px 0 10px 0;">
+      <div style="width: 100%; display: flex; justify-content: center; margin: 20px 0 30px 0;">
         <img 
           src=".github/images/sentivox-logo.png" 
           alt="Sentivox Logo" 
           style="
-            width: 300px;
+            width: 400px;
+            max-width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto;
           "/>
       </div>
       <div style="padding: 0 1rem;">
