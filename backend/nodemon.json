@@ -1,0 +1,15 @@
+{
+  "watch": ["src"],
+  "ext": "ts,json",
+  "ignore": [
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts",
+    "src/**/__tests__",
+    "src/**/__mocks__"
+  ],
+  "exec": "ts-node -r tsconfig-paths/register --files src/index.ts",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "verbose": true
+}

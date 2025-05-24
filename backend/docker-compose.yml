@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+    container_name: sentivox-backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongo:27017/sentivox
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongo
+    networks:
+      - sentivox-network
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.js"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  mongo:
+    image: mongo:6.0
+    container_name: sentivox-mongo
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_DATABASE=sentivox
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - '27017:27017'
+    networks:
+      - sentivox-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mongo-express:
+    image: mongo-express:1.0.0
+    container_name: sentivox-mongo-express
+    restart: unless-stopped
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=password
+    ports:
+      - '8081:8081'
+    depends_on:
+      - mongo
+    networks:
+      - sentivox-network
+
+networks:
+  sentivox-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
