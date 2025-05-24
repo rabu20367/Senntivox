@@ -1,9 +1,11 @@
 <div align="center">
+  <img src=".github/images/sentivox-logo.png" alt="Sentivox Logo" width="200"/>
+  
   <h1>Sentivox</h1>
   <p><strong>AI Companion for Senior Well-being</strong></p>
+  
+  > *"Empowering seniors through meaningful AI companionship"*
 </div>
-
-> *"Empowering seniors through meaningful AI companionship"*
 
 
 Sentivox is an AI-powered companion designed to combat senior loneliness through engaging conversations, memory stimulation, and daily support.
