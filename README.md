@@ -7,7 +7,7 @@
             <tr style="border: 0; padding: 0;">
               <td style="border: 0; padding: 0; text-align: center;">
                 <img 
-                  src=".github/images/sentivox-logo.png" 
+                  src="https://raw.githubusercontent.com/rabu20367/Senntivox/main/backend/Logo%20file/Sentivox%20removed%20background%20logo.png" 
                   alt="Sentivox Logo" 
                   style="width: 100%; height: auto; display: block; border: 0;"
                 />
