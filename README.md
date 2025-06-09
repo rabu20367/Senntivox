@@ -100,9 +100,21 @@ Sentivox is an AI-powered companion designed to combat senior loneliness through
    ```bash
    # In backend directory
    npm run dev
-   
+
    # In frontend directory
    npm start
+   ```
+
+5. Run tests:
+   ```bash
+   cd backend && npm install
+   npm test
+   ```
+
+   For the frontend:
+   ```bash
+   cd frontend && npm install
+   npm test
    ```
 
 ## License
