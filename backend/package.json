@@ -22,7 +22,7 @@
     "seed": "ts-node -r tsconfig-paths/register src/utils/seed.ts",
     "docker:build": "docker build -t sentivox-backend .",
     "docker:run": "docker run -p 5000:5000 sentivox-backend",
-    "prepare": "husky install"
+    "prepare": "node -e \"if(process.env.HUSKY!=='0' && require('fs').existsSync('.git')){require('child_process').execSync('husky install',{stdio:'inherit'})}\""
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.6",
