@@ -76,10 +76,10 @@ Sentivox is an AI-powered companion designed to combat senior loneliness through
    git clone https://github.com/yourusername/sentivox.git
    cd sentivox
    ```
-   **Note:** `npm install` in the backend runs `husky install`, which expects
-   the project to be inside a Git repository. Cloning via `git clone` ensures
-   the `.git` directory is present. If you downloaded the project as a ZIP,
-   run `git init` in the root before installing dependencies.
+  **Note:** `npm install` in the backend only installs Husky if a `.git`
+  directory exists and the `HUSKY` environment variable is not set to `0`.
+  If you plan to use Git hooks, make sure the project is inside a Git
+  repository (run `git init` if needed).
 
 2. Set up the backend:
    ```bash
