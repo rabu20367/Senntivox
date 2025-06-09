@@ -20,7 +20,8 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
       role
     });
 
-    sendTokenResponse(user, 200, res);
+    // Return 201 status code to indicate successful creation
+    sendTokenResponse(user, 201, res);
   } catch (err) {
     next(err);
   }
