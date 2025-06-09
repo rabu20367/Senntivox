@@ -1,26 +1,32 @@
 // Simple test to debug the test environment
 import { describe, it, expect, beforeAll, afterAll } from '@jest/globals';
 import mongoose from 'mongoose';
+import { MongoMemoryServer } from 'mongodb-memory-server';
+
+let mongoServer: MongoMemoryServer;
 
 describe('Debug Test Environment', () => {
   beforeAll(async () => {
-    // Check if we can connect to MongoDB
-    console.log('BeforeAll: Checking MongoDB connection...');
+    // Start in-memory MongoDB server
+    console.log('BeforeAll: Starting MongoMemoryServer...');
     try {
-      await mongoose.connect('mongodb://localhost:27017/test', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      } as any);
-      console.log('MongoDB connected successfully');
+      mongoServer = await MongoMemoryServer.create();
+      const mongoUri = mongoServer.getUri();
+
+      await mongoose.connect(mongoUri);
+      console.log('MongoDB (memory server) connected successfully');
     } catch (error) {
-      console.error('MongoDB connection error:', error);
+      console.error('MongoDB memory server connection error:', error);
     }
   });
 
   afterAll(async () => {
-    // Disconnect from MongoDB
-    console.log('AfterAll: Disconnecting from MongoDB...');
+    // Disconnect from MongoDB and stop in-memory server
+    console.log('AfterAll: Stopping MongoMemoryServer...');
     await mongoose.disconnect();
+    if (mongoServer) {
+      await mongoServer.stop();
+    }
   });
 
   it('should pass a simple test', () => {
