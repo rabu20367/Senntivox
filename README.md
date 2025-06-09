@@ -76,6 +76,10 @@ Sentivox is an AI-powered companion designed to combat senior loneliness through
    git clone https://github.com/yourusername/sentivox.git
    cd sentivox
    ```
+   **Note:** `npm install` in the backend runs `husky install`, which expects
+   the project to be inside a Git repository. Cloning via `git clone` ensures
+   the `.git` directory is present. If you downloaded the project as a ZIP,
+   run `git init` in the root before installing dependencies.
 
 2. Set up the backend:
    ```bash
@@ -89,9 +93,8 @@ Sentivox is an AI-powered companion designed to combat senior loneliness through
    ```bash
    cd ../frontend
    npm install
-   cp .env.example .env
-   # Update .env with your configuration
    ```
+   The frontend currently requires no environment variables.
 
 4. Start the development servers:
    ```bash
