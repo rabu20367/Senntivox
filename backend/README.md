@@ -121,6 +121,13 @@ docker-compose down
 
 ## 🧪 Testing
 
+Before running the tests, create a separate environment file for the test
+environment:
+
+```bash
+cp .env.test.example .env.test
+```
+
 Integration tests use `mongodb-memory-server`, which requires the legacy
 OpenSSL 1.1 libraries (`libssl.so.1.1` and `libcrypto.so.1.1`). Recent
 distributions may not ship these libraries by default.
@@ -138,8 +145,8 @@ the script downloads a legacy package from Ubuntu archives and installs it
 via `dpkg`.
 
 ```bash
-# Run all tests
-npm test
+# Run all tests without interactive prompts
+CI=true INSTALL_LIBSSL=1 npm test -- -i
 
 # Run tests in watch mode
 npm run test:watch
