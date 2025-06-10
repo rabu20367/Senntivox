@@ -7,7 +7,7 @@
     "src/**/__tests__",
     "src/**/__mocks__"
   ],
-  "exec": "ts-node -r tsconfig-paths/register --files src/index.ts",
+  "exec": "ts-node -r tsconfig-paths/register --files src/server.ts",
   "env": {
     "NODE_ENV": "development"
   },
