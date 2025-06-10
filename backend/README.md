@@ -121,6 +121,20 @@ docker-compose down
 
 ## 🧪 Testing
 
+Integration tests use `mongodb-memory-server`, which requires the legacy
+OpenSSL 1.1 libraries (`libssl.so.1.1` and `libcrypto.so.1.1`). Recent
+distributions may not ship these libraries by default.
+
+Install them manually before running the tests:
+
+```bash
+sudo apt-get update
+sudo apt-get install libssl1.1
+```
+
+Alternatively you can run the test command with `INSTALL_LIBSSL=1` and the
+script will attempt to install the package for you.
+
 ```bash
 # Run all tests
 npm test
