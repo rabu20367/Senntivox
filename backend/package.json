@@ -9,7 +9,7 @@
     "build": "npm run clean && tsc",
     "clean": "rimraf dist",
     "serve": "node dist/server.js",
-    "test": "jest --passWithNoTests",
+    "test": "node ./scripts/check-libssl.js && jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:unit": "jest --config=jest.config.js --testPathPattern=src/.*\\.test\\.ts$",
     "test:integration": "jest --config=jest.config.js --testPathPattern=src/test/.*\\.test\\.ts$",
