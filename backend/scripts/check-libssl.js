@@ -11,9 +11,18 @@ function hasLibrary(lib) {
 
 function install() {
   try {
-    execSync('apt-get update && apt-get install -y libssl1.1', { stdio: 'inherit' });
+    execSync('apt-get update', { stdio: 'inherit' });
+    execSync('apt-get install -y libssl1.1', { stdio: 'inherit' });
   } catch (err) {
-    console.error('Automatic installation failed:', err.message);
+    console.warn('libssl1.1 not available via apt, attempting manual download...');
+    try {
+      const url =
+        'http://mirrors.kernel.org/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.24_amd64.deb';
+      execSync(`curl -fsSL -o /tmp/libssl1.1.deb ${url}`, { stdio: 'inherit' });
+      execSync('dpkg -i /tmp/libssl1.1.deb', { stdio: 'inherit' });
+    } catch (e) {
+      console.error('Manual installation failed:', e.message);
+    }
   }
 }
 

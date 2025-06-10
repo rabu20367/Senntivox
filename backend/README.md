@@ -129,11 +129,13 @@ Install them manually before running the tests:
 
 ```bash
 sudo apt-get update
-sudo apt-get install libssl1.1
+sudo apt-get install libssl1.1  # may require adding legacy packages
 ```
 
 Alternatively you can run the test command with `INSTALL_LIBSSL=1` and the
-script will attempt to install the package for you.
+script will attempt to install the package for you. If `apt-get` fails,
+the script downloads a legacy package from Ubuntu archives and installs it
+via `dpkg`.
 
 ```bash
 # Run all tests
