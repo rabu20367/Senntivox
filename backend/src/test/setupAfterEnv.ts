@@ -1,4 +1,17 @@
+import mongoose from 'mongoose';
 import { clearTestDB } from './__utils__/testUtils';
+
+/**
+ * Ensures that the mongoose connection is fully open before
+ * attempting to clear the test database. This prevents errors
+ * when tests start before the connection is ready.
+ */
+async function waitForConnection(): Promise<void> {
+  if (mongoose.connection.readyState === 1) return;
+  await new Promise<void>((resolve) => {
+    mongoose.connection.once('open', () => resolve());
+  });
+}
 
 // Set up the test environment before all tests
 beforeAll(async () => {
@@ -19,6 +32,7 @@ beforeAll(async () => {
 
 // Clean up database between tests
 afterEach(async () => {
+  await waitForConnection();
   await clearTestDB();
   jest.clearAllMocks();
 });
