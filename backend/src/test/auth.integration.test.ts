@@ -1,8 +1,7 @@
 import request from 'supertest';
-import mongoose from 'mongoose';
-import app from '../server';
+import { describe, beforeEach, it, expect } from '@jest/globals';
+import app from '../app';
 import User from '../models/User';
-import { connectDB } from '../config/db';
 
 // Test user data
 const testUser = {
@@ -11,27 +10,10 @@ const testUser = {
   password: 'password123',
 };
 
-// Use a different port for testing to avoid conflicts
-const TEST_PORT = 5001;
-process.env.PORT = TEST_PORT.toString();
-
 describe('Auth API Integration Tests', () => {
-  const baseUrl = `http://localhost:${TEST_PORT}/api/v1`;
+  const baseUrl = '/api/v1';
 
-  beforeAll(async () => {
-    // Connect to the test database
-    await connectDB();
-  });
 
-  afterAll(async () => {
-    // Close the database connection
-    await mongoose.connection.close();
-  });
-
-  afterEach(async () => {
-    // Clean up the database after each test
-    await User.deleteMany({});
-  });
 
   describe('POST /auth/register', () => {
     it('should register a new user', async () => {

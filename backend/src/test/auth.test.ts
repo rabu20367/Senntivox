@@ -1,8 +1,6 @@
 import request from 'supertest';
-import { MongoMemoryServer } from 'mongodb-memory-server';
-import mongoose from 'mongoose';
-import { describe, beforeAll, afterAll, afterEach, it, expect } from '@jest/globals';
-import { app } from '../server';
+import { describe, beforeEach, it, expect } from '@jest/globals';
+import app from '../app';
 
 // Extend the default timeout for tests
 jest.setTimeout(60000);
@@ -13,38 +11,10 @@ const testUser = {
   password: 'password123',
 };
 
-// Use a different port for testing to avoid conflicts
-const TEST_PORT = 5001;
-process.env.PORT = TEST_PORT.toString();
-
 describe('Auth API Integration Tests', () => {
-  const baseUrl = `http://localhost:${TEST_PORT}/api/v1`;
+  const baseUrl = '/api/v1';
 
-  let mongoServer: MongoMemoryServer;
 
-  beforeAll(async () => {
-    // Create a new MongoDB Memory Server instance
-    mongoServer = await MongoMemoryServer.create();
-    const mongoUri = mongoServer.getUri();
-    
-    // Connect to the in-memory database
-    await mongoose.connect(mongoUri);
-  });
-
-  afterEach(async () => {
-    // Clear all test data after each test
-    const collections = mongoose.connection.collections;
-    for (const key in collections) {
-      const collection = collections[key];
-      await collection.deleteMany({});
-    }
-  });
-
-  afterAll(async () => {
-    // Close the mongoose connection and stop the MongoDB Memory Server
-    await mongoose.disconnect();
-    await mongoServer.stop();
-  });
 
   describe('POST /auth/register', () => {
     it('should register a new user', async () => {

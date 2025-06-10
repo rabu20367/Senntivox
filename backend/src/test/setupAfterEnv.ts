@@ -1,15 +1,9 @@
-import { setupTestDB, clearTestDB, closeTestDB } from './__utils__/testUtils';
-
-// This will hold our in-memory MongoDB instance
-let mongoServer: any;
+import { clearTestDB } from './__utils__/testUtils';
 
 // Set up the test environment before all tests
 beforeAll(async () => {
   // Set test environment
   process.env.NODE_ENV = 'test';
-  
-  // Setup in-memory MongoDB server
-  mongoServer = await setupTestDB();
   
   // Mock console methods to reduce test noise
   jest.spyOn(console, 'log').mockImplementation(() => {});
@@ -31,7 +25,6 @@ afterEach(async () => {
 
 // Clean up after all tests are done
 afterAll(async () => {
-  await closeTestDB(mongoServer);
   jest.restoreAllMocks();
 });
 
