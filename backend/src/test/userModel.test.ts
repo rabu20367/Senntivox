@@ -41,6 +41,22 @@ describe('User Model', () => {
     expect(savedUser.email).toBe(userData.email);
     expect(savedUser.password).not.toBe(userData.password); // Should be hashed
     expect(savedUser.role).toBe('user');
+    expect(savedUser.isEmailVerified).toBe(false);
+  });
+
+  it('should allow setting email verification status', async () => {
+    const userData: Partial<IUser> = {
+      name: 'Verified User',
+      email: 'verified@example.com',
+      password: 'securepassword',
+      role: 'user',
+      isEmailVerified: true,
+    };
+
+    const user = new User(userData);
+    const savedUser = await user.save();
+
+    expect(savedUser.isEmailVerified).toBe(true);
   });
 
   it('should not save a user without required fields', async () => {
