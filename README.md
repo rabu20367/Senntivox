@@ -113,9 +113,16 @@ Sentivox is an AI-powered companion designed to combat senior loneliness through
 
    For the frontend:
    ```bash
-   cd frontend && npm install
+cd frontend && npm install
    npm test
    ```
+
+## Customizing Email Templates
+
+Email notifications in the backend are rendered using [Pug](https://pugjs.org/).
+Template files live in `backend/src/views/emails`. You can modify the provided
+templates or add new ones to match your branding. After editing a template,
+restart the backend server so the changes are picked up.
 
 ## License
 
