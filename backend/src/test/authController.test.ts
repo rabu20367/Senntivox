@@ -1,36 +1,15 @@
 import request from 'supertest';
-import mongoose from 'mongoose';
-import { MongoMemoryServer } from 'mongodb-memory-server';
-import { app } from '../server';
+import { describe, beforeEach, it, expect } from '@jest/globals';
+import app from '../app';
 import User from '../models/User';
 
 describe('Auth Controller', () => {
-  let mongoServer: MongoMemoryServer;
   let testUser = {
     name: 'Test User',
     email: 'test@example.com',
     password: 'testpassword123'
   };
 
-  beforeAll(async () => {
-    // Start MongoDB Memory Server
-    mongoServer = await MongoMemoryServer.create();
-    const mongoUri = mongoServer.getUri();
-    
-    // Connect to the in-memory database
-    await mongoose.connect(mongoUri);
-  });
-
-  afterEach(async () => {
-    // Clear all test data after each test
-    await User.deleteMany({});
-  });
-
-  afterAll(async () => {
-    // Close the mongoose connection and stop the MongoDB Memory Server
-    await mongoose.disconnect();
-    await mongoServer.stop();
-  });
 
   describe('POST /api/v1/auth/register', () => {
     it('should register a new user', async () => {
