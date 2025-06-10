@@ -1,6 +1,7 @@
 import mongoose, { Document, Schema } from 'mongoose';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
+import jwt from 'jsonwebtoken';
 
 export interface IUser extends Document {
   name: string;
@@ -12,6 +13,7 @@ export interface IUser extends Document {
   resetPasswordExpire?: Date;
   createdAt: Date;
   matchPassword(enteredPassword: string): Promise<boolean>;
+  getSignedJwtToken(): string;
 }
 
 const UserSchema: Schema = new Schema({
@@ -69,6 +71,15 @@ UserSchema.pre<IUser>('save', async function(next) {
 // Match user entered password to hashed password in database
 UserSchema.methods.matchPassword = async function(enteredPassword: string) {
   return await bcrypt.compare(enteredPassword, this.password);
+};
+
+// Sign JWT and return
+UserSchema.methods.getSignedJwtToken = function() {
+  return jwt.sign(
+    { id: this._id },
+    process.env.JWT_SECRET as string,
+    { expiresIn: process.env.JWT_EXPIRE }
+  );
 };
 
 // Generate and hash password token

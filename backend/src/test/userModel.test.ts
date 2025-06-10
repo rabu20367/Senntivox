@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
+import jwt from 'jsonwebtoken';
 import User, { IUser } from '../models/User';
 
 describe('User Model', () => {
@@ -102,5 +103,24 @@ describe('User Model', () => {
     // Test wrong password
     const isWrongMatch = await user.matchPassword('wrongpassword');
     expect(isWrongMatch).toBe(false);
+  });
+
+  it('should generate a signed JWT token', async () => {
+    const user = new User({
+      name: 'JWT User',
+      email: 'jwt@example.com',
+      password: 'jwtpassword',
+      role: 'user' as const
+    });
+
+    await user.save();
+
+    const token = user.getSignedJwtToken();
+    expect(typeof token).toBe('string');
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as {
+      id: string;
+    };
+    expect(decoded.id).toBe(user._id.toString());
   });
 });
