@@ -1,6 +1,6 @@
-# Sentivox Frontend
+# Senntivox Frontend
 
-This directory contains the React client for the Sentivox project.
+This directory contains the React client for the Senntivox project.
 
 ## Development
 

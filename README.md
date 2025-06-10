@@ -4,7 +4,7 @@
       <div style="width: 100%; display: flex; justify-content: center; padding: 20px 0 30px 0;">
         <img 
           src=".github/images/logo.png" 
-          alt="Sentivox Logo" 
+          alt="Senntivox Logo"
           style="width: 500px; max-width: 100%; height: auto; display: block;"
         />
       </div>
@@ -15,7 +15,7 @@
           color: #2c3e50;
           font-weight: 700;
           text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        ">Sentivox</h1>
+        ">Senntivox</h1>
         <p style="
           font-size: 1.1rem; 
           margin: 0 0 0.5rem 0;
@@ -40,7 +40,7 @@
 </div>
 
 
-Sentivox is an AI-powered companion designed to combat senior loneliness through engaging conversations, memory stimulation, and daily support.
+Senntivox is an AI-powered companion designed to combat senior loneliness through engaging conversations, memory stimulation, and daily support.
 
 ## Features
 

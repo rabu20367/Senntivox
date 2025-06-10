@@ -1,6 +1,6 @@
-# Sentivox Backend
+# Senntivox Backend
 
-Backend API for the Sentivox application, built with Node.js, Express, TypeScript, and MongoDB. This application provides the necessary APIs for user authentication, profile management, and other core functionalities of the Sentivox platform.
+Backend API for the Senntivox application, built with Node.js, Express, TypeScript, and MongoDB. This application provides the necessary APIs for user authentication, profile management, and other core functionalities of the Senntivox platform.
 
 ## 🚀 Features
 
@@ -71,7 +71,7 @@ EMAIL_HOST=smtp.example.com
 EMAIL_PORT=587
 EMAIL_USER=your_email@example.com
 EMAIL_PASS=your_email_password
-EMAIL_FROM='Sentivox <noreply@sentivox.com>'
+EMAIL_FROM='Senntivox <noreply@senntivox.com>'
 
 # Frontend URLs
 FRONTEND_BASE_URL=http://localhost:3000
