@@ -36,18 +36,24 @@ const skipRateLimit = (req: Request) => {
   return process.env.NODE_ENV === 'test' || isLocalhost;
 };
 
+// Rate limiting values from environment variables with sensible defaults
+const DEFAULT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const DEFAULT_MAX = 100;
+const RATE_LIMIT_WINDOW_MS = parseInt(process.env.RATE_LIMIT_WINDOW_MS || '', 10) || DEFAULT_WINDOW_MS;
+const RATE_LIMIT_MAX = parseInt(process.env.RATE_LIMIT_MAX || '', 10) || DEFAULT_MAX;
+
 // API rate limiter
 const apiLimiter = createRateLimiter({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  windowMs: RATE_LIMIT_WINDOW_MS,
+  max: RATE_LIMIT_MAX,
   message: 'Too many requests from this IP, please try again after 15 minutes',
   skip: skipRateLimit
 });
 
 // More aggressive rate limiting for auth routes
 const authLimiter = createRateLimiter({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 20, // Limit each IP to 20 requests per windowMs
+  windowMs: RATE_LIMIT_WINDOW_MS,
+  max: RATE_LIMIT_MAX,
   message: 'Too many login attempts, please try again after 15 minutes',
   skip: skipRateLimit
 });
