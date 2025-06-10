@@ -13,8 +13,8 @@ const errorHandler = (
   _req: Request,
   res: Response,
   _next: NextFunction
-) => {
-  let error = { ...err };
+): void => {
+  let error: ErrorWithStatus = { ...err };
   error.message = err.message;
 
   // Log to console for dev
@@ -53,7 +53,14 @@ const errorHandler = (
   res.status(error.statusCode || 500).json({
     success: false,
     error: error.message || 'Server Error',
+    ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
   });
 };
 
+const notFound = (req: Request, _res: Response, next: NextFunction): void => {
+  const error = new ErrorResponse(`Not Found - ${req.originalUrl}`, 404);
+  next(error);
+};
+
+export { errorHandler, notFound };
 export default errorHandler;
